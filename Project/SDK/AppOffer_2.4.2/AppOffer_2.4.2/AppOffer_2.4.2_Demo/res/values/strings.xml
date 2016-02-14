@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Demo2.4.1</string>
+    
+    <string name="offerList">Offers</string>
+    <string name="popAd">PopAd</string>
+    <string name="shareOfferList">ShareOffer</string>
+    <string name="gameOfferList">GameOffer</string>
+    <string name="appOfferList">AppOffer</string>
+    <string name="spendPoints">SpendPoints(-10)</string>
+    <string name="awardPoints">AwardPoints(+10)</string>
+    <string name="feedback">Feedback</string>
+    <string name="moreApps">MoreApps(list)</string>
+    <string name="ownAppDetail">OwnApp(one)</string>
+    <string name="diyAd">DiyAd</string>
+    <string name="diyAdList">DiyAdList</string>
+    <string name="checkUpdate">CheckUpdate</string>
+    <string name="funAd">FunAd</string>
+    
+</resources>

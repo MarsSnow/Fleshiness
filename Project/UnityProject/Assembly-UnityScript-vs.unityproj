@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{3F0E016A-AD72-7C6C-4FE8-786962F65409}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_9;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\_OtherScript\bord.js" />
+     <Compile Include="Assets\EasyTouch\Plugins\_Java-Event-Template\J_EasyButtonTemplate.js" />
+     <Compile Include="Assets\EasyTouch\Plugins\_Java-Event-Template\J_EasyJoystickTemplate.js" />
+     <Compile Include="Assets\EasyTouch\Plugins\_Java-Event-Template\J_EasyTouchTemplate.js" />
+     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\NGUI\ReadMe - 3.7.6.txt" />
+     <None Include="Assets\Scripts\Plugins\Spine\Shaders\HiddenPass.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTTextureEffect.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTGreyEffect.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAdditiveEffectAvatar.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTEdgeTransparent.shader" />
+     <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\Resources\Common\Shader\OutLighting.shader" />
+     <None Include="Assets\Scripts\Shaders\ProjectorLight.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAdditiveEdgeTransparent.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 2.shader" />
+     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTCoreTransparent.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
+     <None Include="Assets\Scripts\Plugins\Spine\Shaders\SkeletonLit.shader" />
+     <None Include="Assets\EasyTouch\Readme_first.txt" />
+     <None Include="Assets\Resources\Common\Shader\RimLightSpce.shader" />
+     <None Include="Assets\HOTween\readme.txt" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\Scripts\Shaders\AlphaTestDiffuse.shader" />
+     <None Include="Assets\Resources\Common\Shader\MyMobile Particle ParticleAdd.shader" />
+     <None Include="Assets\Resources\Common\Shader\Multiply.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAdditive.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAlphaBlended2.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAdditiveExt.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAlphaTest.shader" />
+     <None Include="Assets\Scripts\Shaders\Blur.shader" />
+     <None Include="Assets\Scripts\Shaders\mmt_noco.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
+     <None Include="Assets\Scripts\Shaders\ZQLTTextureAdd.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTLightDBAvatar.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\Scripts\Shaders\ZQLTBrightFade.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
+     <None Include="Assets\Scripts\Shaders\OutterLineComposer.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAlphaTestAvatar.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTBrightFadeAddtive.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTNewAvatar.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTLightAvatar.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
+     <None Include="Assets\Resources\Common\Shader\MyVertexLit.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTBrightTransfrom.shader" />
+     <None Include="Assets\Scripts\Shaders\OutLine.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTTerrain.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTTransparentAvatar.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
+     <None Include="Assets\Scripts\Plugins\Spine\Shaders\Bones.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTStatic.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTTextureBlend.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTDistort.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTGreyEffect2.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAvatar.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
+     <None Include="Assets\link.xml" />
+     <None Include="Assets\Scripts\Shaders\ZQLTProjectorLight.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
+     <None Include="Assets\Scripts\Plugins\Spine\Shaders\Skeleton.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+     <None Include="Assets\Resources\Common\Shader\MyUnilit.shader" />
+     <None Include="Assets\Resources\Common\Shader\Particle Add.shader" />
+     <None Include="Assets\Resources\Common\Shader\Alpha-Diffuse.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTTextureEffectExt.shader" />
+     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\Resources\Chinese\UI\Atlas\Common\Atlas\Common_Atlas.txt" />
+     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
+     <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
+     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\Resources\Common\Shader\Map.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\Scripts\Shaders\ZQLTEmission.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTStamp.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTAlphaBlended.shader" />
+     <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\Resources\Common\Shader\InterlacePatternAdditive.shader" />
+     <None Include="Assets\NGUI\Examples\Resources\Localization.txt" />
+     <None Include="Assets\Resources\Common\Shader\Alpha-VertexLit.shader" />
+     <None Include="Assets\Scripts\Shaders\ZQLTTextureExtAdd.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.9/Standalone/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="HOTween">
+ <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/HOTween/Plugins/HOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="Messages">
+ <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/Resources/Common/Lib/Messages.dll</HintPath>
+ </Reference>
+ <Reference Include="protobuf-net">
+ <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/Resources/Common/Lib/protobuf-net.dll</HintPath>
+ </Reference>
+ <Reference Include="ProtobufSerializer">
+ <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/Resources/Common/Lib/ProtobufSerializer.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

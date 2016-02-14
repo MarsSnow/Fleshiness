@@ -1,0 +1,7 @@
+应用名称：
+多肉图鉴
+
+包名：
+peng.bo.pluto2003.ub.succulenthandbook
+
+APP_ID:681259ee7f6f07887a27d8e3253e9255

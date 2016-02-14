@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.PenSprite002.CSharp", "UnityVS.PenSprite002.CSharp.csproj", "{9EF1FC48-B482-1C3F-99E9-63184CE8F049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.PenSprite002.CSharp.Editor", "UnityVS.PenSprite002.CSharp.Editor.csproj", "{EEA68D15-B5BD-184B-F878-D1AFD9CC1C49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EF1FC48-B482-1C3F-99E9-63184CE8F049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF1FC48-B482-1C3F-99E9-63184CE8F049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF1FC48-B482-1C3F-99E9-63184CE8F049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF1FC48-B482-1C3F-99E9-63184CE8F049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA68D15-B5BD-184B-F878-D1AFD9CC1C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA68D15-B5BD-184B-F878-D1AFD9CC1C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA68D15-B5BD-184B-F878-D1AFD9CC1C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA68D15-B5BD-184B-F878-D1AFD9CC1C49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

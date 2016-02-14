@@ -1,0 +1,182 @@
+﻿Shader "MyVertexLit" {
+Properties {
+	_Color ("Main Color", Color) = (1,1,1,1)
+	_SpecColor ("Spec Color", Color) = (1,1,1,1)
+	_Emission ("Emissive Color", Color) = (0,0,0,0)
+	_Shininess ("Shininess", Range (0.01, 1)) = 0.7
+	_MainTex ("Base (RGB)", 2D) = "white" {}
+	_RimColor ("Rim Color", Color) = (0.26,0.19,0.16,0.0)
+    _RimPower ("Rim Power", Range(0.5,8.0)) = 2.0
+    _Strength("Strength", Range(0.0, 100.0)) = 1.0
+}
+
+SubShader {
+	Tags { "RenderType"="Opaque" }
+	LOD 100
+	
+CGPROGRAM
+#pragma surface surf BlinnPhong
+#pragma target 3.0
+
+sampler2D _MainTex;
+fixed4 _Color;
+float4 _RimColor;
+float _RimPower;
+float _Strength;
+
+struct Input {
+	float2 uv_MainTex;
+	float2 uv_BumpMap;
+	float3 viewDir;
+};
+
+void surf (Input IN, inout SurfaceOutput o) {
+	
+	fixed4 tex = tex2D(_MainTex, IN.uv_MainTex);
+	o.Albedo = tex.rgb * _Color.rgb;
+	o.Gloss = tex.a;
+	o.Alpha = tex.a * _Color.a;
+	half rim = 1 - saturate(dot (normalize(IN.viewDir), o.Normal));
+    o.Emission = _RimColor.rgb * pow (rim, _RimPower ) * _Strength;
+}
+ENDCG
+	
+	// Non-lightmapped
+	Pass {
+		Tags { "LightMode" = "Vertex" }
+		
+		Material {
+			Diffuse [_Color]
+			Ambient [_Color]
+			Shininess [_Shininess]
+			Specular [_SpecColor]
+			Emission [_Emission]
+		} 
+		Lighting On
+		SeparateSpecular On
+		SetTexture [_MainTex] {
+			Combine texture * primary DOUBLE, texture * primary
+		} 
+	}
+	
+	// Lightmapped, encoded as dLDR
+	Pass {
+		Tags { "LightMode" = "VertexLM" }
+		
+		BindChannels {
+			Bind "Vertex", vertex
+			Bind "normal", normal
+			Bind "texcoord1", texcoord0 // lightmap uses 2nd uv
+			Bind "texcoord", texcoord1 // main uses 1st uv
+		}
+		
+		SetTexture [unity_Lightmap] {
+			matrix [unity_LightmapMatrix]
+			constantColor [_Color]
+			combine texture * constant
+		}
+		SetTexture [_MainTex] {
+			combine texture * previous DOUBLE, texture * primary
+		}
+	}
+	
+	// Lightmapped, encoded as RGBM
+	Pass {
+		Tags { "LightMode" = "VertexLMRGBM" }
+		
+		BindChannels {
+			Bind "Vertex", vertex
+			Bind "normal", normal
+			Bind "texcoord1", texcoord0 // lightmap uses 2nd uv
+			Bind "texcoord1", texcoord1 // unused
+			Bind "texcoord", texcoord2 // main uses 1st uv
+		}
+		
+		SetTexture [unity_Lightmap] {
+			matrix [unity_LightmapMatrix]
+			combine texture * texture alpha DOUBLE
+		}
+		SetTexture [unity_Lightmap] {
+			constantColor [_Color]
+			combine previous * constant
+		}
+		SetTexture [_MainTex] {
+			combine texture * previous QUAD, texture * primary
+		}
+	}
+	
+	// Pass to render object as a shadow caster
+	Pass {
+		Name "ShadowCaster"
+		Tags { "LightMode" = "ShadowCaster" }
+		
+		Fog {Mode Off}
+		ZWrite On ZTest LEqual Cull Off
+		Offset 1, 1
+
+CGPROGRAM
+#pragma vertex vert
+#pragma fragment frag
+#pragma multi_compile_shadowcaster
+#include "UnityCG.cginc"
+
+struct v2f { 
+	V2F_SHADOW_CASTER;
+};
+
+v2f vert( appdata_base v )
+{
+	v2f o;
+	TRANSFER_SHADOW_CASTER(o)
+	return o;
+}
+
+float4 frag( v2f i ) : COLOR
+{
+	SHADOW_CASTER_FRAGMENT(i)
+}
+ENDCG
+
+	}
+	
+	// Pass to render object as a shadow collector
+	Pass {
+		Name "ShadowCollector"
+		Tags { "LightMode" = "ShadowCollector" }
+		
+		Fog {Mode Off}
+		ZWrite On ZTest LEqual
+
+CGPROGRAM
+#pragma vertex vert
+#pragma fragment frag
+#pragma multi_compile_shadowcollector 
+
+#define SHADOW_COLLECTOR_PASS
+#include "UnityCG.cginc"
+
+struct appdata {
+	float4 vertex : POSITION;
+};
+
+struct v2f {
+	V2F_SHADOW_COLLECTOR;
+};
+
+v2f vert (appdata v)
+{
+	v2f o;
+	TRANSFER_SHADOW_COLLECTOR(o)
+	return o;
+}
+
+fixed4 frag (v2f i) : COLOR
+{
+	SHADOW_COLLECTOR_FRAGMENT(i)
+}
+ENDCG
+
+	}
+}
+
+}

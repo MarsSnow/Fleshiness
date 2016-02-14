@@ -1,0 +1,112 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="peng.bo.pluto2003.ub.succulenthandbook"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    <uses-sdk
+    android:minSdkVersion="8"
+    android:targetSdkVersion="18" />
+
+    <!--粗略位置-->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<!--精确位置-->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<!--锁屏-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--访问网络-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--获取网络连接状态信息-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--获取IMSI-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--往SD卡写内容-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+     <!--获取当前或最近运行的应用-->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+     <!--Wifi状态-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+     <!--快捷方式-->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+     <!--书签-->
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS" />
+    <!--壁纸-->
+    <uses-permission android:name ="android.permission.SET_WALLPAPER"/>
+     <!--壁纸-->
+    <uses-permission android:name ="android.permission.SET_WALLPAPER_HINTS"/>
+     <!--创建快捷方式-->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />  
+     <!--卸载快捷方式-->
+	<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> 
+	<!--写设置--> 
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!--向外部存储器写的设置--> 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity 
+            android:name = "peng.bo.pluto2003.ub.succulenthandbook.MainActivity"
+            android:label = "@string/app_name"
+            android:configChanges = "fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+            android:screenOrientation = "landscape"
+            >
+            <intent-filter>
+                <action android:name = "android.intent.action.MAIN"/>
+                <category android:name = "android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         
+        <activity android:name="peng.bo.pluto2003.ub.succulenthandbook.BBSActivity" />
+        <!-- 万普支付相关activity  android:screenOrientation = "reverseLandscape"-->
+        <activity android:name="peng.bo.pluto2003.ub.succulenthandbook.MainPayViewActivity" />
+          
+        <activity 
+ 			android:name="com.wanpu.pay.PayView"
+ 			android:configChanges="keyboardHidden|orientation" />
+ 		<activity
+ 			android:name="com.payeco.android.plugin.PayecoPluginLoadingActivity"
+ 			android:exported="true"
+	        android:screenOrientation="portrait"
+	        android:theme="@android:style/Theme.Translucent"
+	        android:windowSoftInputMode="adjustPan|stateHidden" />
+ 		
+		 <activity
+		 android:name="com.payeco.android.plugin.PayecoOrderDetailActivity"
+		 android:screenOrientation="portrait"
+		 android:windowSoftInputMode="adjustPan|stateHidden" />
+		 
+		 <activity
+		 android:name="com.payeco.android.plugin.PayecoPayResultActivity"
+		 android:screenOrientation="portrait"
+		 android:windowSoftInputMode="adjustPan|stateHidden" /> 
+		 
+		 <activity
+		 android:name="com.payeco.android.plugin.PayecoWebViewActivity"
+		 android:screenOrientation="portrait"
+		 android:windowSoftInputMode="adjustPan|stateHidden" />
+		 
+		 <activity
+		 android:name="com.payeco.android.plugin.PayecoRiskControlActivity"
+		 android:configChanges="orientation|keyboardHidden"
+		 android:screenOrientation="portrait"
+		 android:windowSoftInputMode="adjustPan|stateHidden" />
+        
+         <!-- 万普SDK相关activity -->
+        <activity
+            android:name="cn.waps.OffersWebView"
+            android:configChanges="keyboardHidden|orientation"
+             /> 
+            
+        <meta-data
+            android:name="APP_ID"
+            android:value="681259ee7f6f07887a27d8e3253e9255" />
+        <meta-data
+            android:name="APP_PID"
+            android:value="mumayi" />
+        
+    </application>
+
+</manifest>

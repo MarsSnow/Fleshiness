@@ -1,0 +1,1 @@
+VersionGenerator.exe -py E:\workroot_3dmt\source\ghserver\game\version.py -cs E:\workroot_gh\source\ghclient\Assets\Scripts\VersionMng.cs

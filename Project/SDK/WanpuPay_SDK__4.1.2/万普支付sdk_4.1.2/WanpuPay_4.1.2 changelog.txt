@@ -1,0 +1,138 @@
+SDK_4.1.2_changelog：
+
+一，银联支付插件更新：
+1，将原有UPPayPluginEx.jar包，替换为UPPayPluginExStd.jar；
+2，将所有的so文件进行替换，新增了arm64-va8a的so文件；
+3，assets目录下新增data.bin文件；
+
+
+======================================================================
+
+SDK_4.1.1_changelog：
+
+一，解决余额支付无法注册及崩溃bug
+
+二，更新支付宝
+
+======================================================================
+
+SDK_4.0.0_changelog：
+
+一，加入了新的银联支付渠道，与原有银联支付渠道并存，金额小于500时使用原有渠道，大于等于500时，使用新的支付渠道。
+
+二，支付流程优化；
+
+======================================================================
+SDK_3.0.0_changelog： 
+
+1.添加余额钱包账号系统
+
+2.添加余额钱包充值和支付功能
+
+3.修改充值卡支付流程，充值产生余额和充值金额不足以支付时，将余额和充值金额存入余额钱包，用户登录后可使用余额钱包功能；等额支付时充值卡流程未变
+
+4.支付流程优化，界面调整
+
+======================================================================
+SDK_2.2.4_changelog：
+
+一，优化了充值卡支付界面；
+
+二，优化了充值卡支付校验；
+
+======================================================================
+
+SDK_2.2.3_changelog：
+
+一，优化了支付界面；
+
+二，优化了部分安全软件误报广告的问题；
+
+三，优化了支付宝安全插件安装报解析包错误的问题；
+
+======================================================================
+
+SDK_2.2.2_changelog：
+
+一，优化了充值卡支付界面；
+
+二，银行卡支付更新jar包，相应更新资源文件：
+	1，更新银行卡支付所需payecopluginjar.jar包；
+	2，Resources\layout中所有payeco_开头文件全部进行更新替换；
+	3，Resources\values中的arrays_bank_pay.xml、colors_bank_pay.xml、
+		dimens_bank_pay.xml、strings_bank_pay.xml、styles_bank_pay.xml文件进行更新替换；
+	4，Resources\drawable-hdpi中的内容全部更新替换；
+	
+三，支付宝安全插件更新，Resources\assets中的alipay-newmsp-5.0.9.apk
+	替换原支付宝安全插件apk包；
+
+======================================================================
+
+SDK_2.2.1_changelog：
+
+一、优化了支付选择界面；
+
+二、银行卡支付更新jar包，相应更新资源文件：
+1，更新银行卡支付所需payecopluginjar.jar包；
+2，Resources\layout中所有payeco_开头文件全部进行更新替换；
+3，Resources\values中的strings_bank_pay.xml文件进行更新替换；
+4，Resources\drawable-hdpi中的内容全部更新替换；
+
+======================================================================
+
+
+SDK_2.2.0_changelog：
+
+一、加入财付通支付通道；
+
+二、修改部分bug；
+
+======================================================================
+
+
+SDK_2.1.1_changelog：
+
+一、PayResultListener的回调方法onPayFinish新加入orderId，goodsName两个参数
+	onPayFinish(Context payViewContext, String orderId, int resultCode, String resultString, int payType,
+				float amount, String goodsName)
+	进而修复confirm无法回执的bug。
+
+二、对支付选择界面PayView进行了横竖屏的判断，会根据进入支付选择界面是的屏幕状态设置为横屏或竖屏。
+
+三、加入了备用域名的配置实用。
+
+
+======================================================================
+
+
+SDK_2.1.0_changelog：
+
+一、加入接口：PayConnect.getInstance(MainActivity.this).confirm(orderId, payType);
+	用于未指定notifyUrl的情况下，交易成功后，必须发送回执（有服务器端通知接口的不需要调用）
+
+二、原SDK中finalize()放法名修改为close()：
+	PayConnect.getInstance(this).close();
+
+三、银行卡支付配置文件有所调整：
+1，更新银行卡支付所需jar包；
+2，Resources\layout中所有payeco_开头文件全部进行替换；
+3，Resources\values中的strings_bank_pay.xml文件进行替换；
+4，AndroidManifest文件中删除以下两个权限：
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.RECEIVE_SMS" />
+5，更新AndroidManifest中所有声明银行卡支付的Activity相关配置。
+
+
+========================================================================
+
+
+SDK_4.1_changelog：
+
+一、修复余额钱包掉单bug
+
+二、优化银行卡支付
+
+三、更新支付宝支付
+
+
+========================================================================

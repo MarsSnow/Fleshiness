@@ -1,0 +1,1 @@
+DirClearup.exe -dirs ..\..\source\ghserver -files *.pyc
