@@ -63,8 +63,8 @@ public class UIDragDropItem : MonoBehaviour
 	protected virtual void Start ()
 	{
 		mTrans = transform;
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		mCollider = collider;
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        mCollider = collider;
 		mCollider2D = collider2D;
 #else
 		mCollider = gameObject.GetComponent<Collider>();

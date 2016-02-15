@@ -107,7 +107,7 @@ static public class NGUIText
 		{
 			dynamicFont.RequestCharactersInTexture(")_-", finalSize, fontStyle);
 
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
 			if (!dynamicFont.GetCharacterInfo(')', out mTempChar, finalSize, fontStyle) || mTempChar.vert.height == 0f)
 			{
 				dynamicFont.RequestCharactersInTexture("A", finalSize, fontStyle);
@@ -123,7 +123,7 @@ static public class NGUIText
 			float y0 = mTempChar.vert.yMax;
 			float y1 = mTempChar.vert.yMin;
 #else
-			if (!dynamicFont.GetCharacterInfo(')', out mTempChar, finalSize, fontStyle) || mTempChar.maxY == 0f)
+            if (!dynamicFont.GetCharacterInfo(')', out mTempChar, finalSize, fontStyle) || mTempChar.maxY == 0f)
 			{
 				dynamicFont.RequestCharactersInTexture("A", finalSize, fontStyle);
 				{
@@ -193,10 +193,10 @@ static public class NGUIText
 		else if (dynamicFont != null)
 		{
 			if (dynamicFont.GetCharacterInfo((char)ch, out mTempChar, finalSize, fontStyle))
- #if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
 				return mTempChar.width * fontScale * pixelDensity;
- #else
-				return mTempChar.advance * fontScale * pixelDensity;
+#else
+                return mTempChar.advance * fontScale * pixelDensity;
  #endif
 		}
 #endif
@@ -260,8 +260,8 @@ static public class NGUIText
 		else if (dynamicFont != null)
 		{
 			if (dynamicFont.GetCharacterInfo((char)ch, out mTempChar, finalSize, fontStyle))
-			{
- #if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
+            {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
 				glyph.v0.x = mTempChar.vert.xMin;
 				glyph.v1.x = glyph.v0.x + mTempChar.vert.width;
 
@@ -288,7 +288,7 @@ static public class NGUIText
 				glyph.advance = mTempChar.width;
 				glyph.channel = 0;
 #else
-				glyph.v0.x = mTempChar.minX;
+                glyph.v0.x = mTempChar.minX;
 				glyph.v1.x = mTempChar.maxX;
 
 				glyph.v0.y = mTempChar.maxY - baseline;

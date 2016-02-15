@@ -30,8 +30,8 @@ public class TweenColor : UITweener
 		mSr = GetComponent<SpriteRenderer>();
 		if (mSr != null) return;
 
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		Renderer ren = renderer;
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        Renderer ren = renderer;
 #else
 		Renderer ren = GetComponent<Renderer>();
 #endif
@@ -39,10 +39,10 @@ public class TweenColor : UITweener
 		{
 			mMat = ren.material;
 			return;
-		}
+        }
 
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		mLight = light;
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        mLight = light;
 #else
 		mLight = GetComponent<Light>();
 #endif

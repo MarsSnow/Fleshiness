@@ -18,6 +18,10 @@ public class UITexture : UIBasicSprite
 {
 	[HideInInspector][SerializeField] Rect mRect = new Rect(0f, 0f, 1f, 1f);
 	[HideInInspector][SerializeField] Texture mTexture;
+#if !UNITY_IOS
+    //add by jonny
+    [HideInInspector][SerializeField] Texture mAlphaTexture;
+#endif
 	[HideInInspector][SerializeField] Material mMat;
 	[HideInInspector][SerializeField] Shader mShader;
 	[HideInInspector][SerializeField] Vector4 mBorder = Vector4.zero;
@@ -56,6 +60,36 @@ public class UITexture : UIBasicSprite
 			}
 		}
 	}
+#if !UNITY_IOS
+    //add by jonny
+    public Texture alphaTexture
+    {
+        get
+        {
+            if (mAlphaTexture != null) return mAlphaTexture;
+            if (mMat != null) return mMat.GetTexture("_AlphaTex");
+            return null;
+        }
+        set
+        {
+            if (mAlphaTexture != value)
+            {
+                if (drawCall != null && drawCall.widgetCount == 1 && mMat == null)
+                {
+                    mAlphaTexture = value;
+                    drawCall.alphaTexture = value;
+                }
+                else
+                {
+                    RemoveFromPanel();
+                    mAlphaTexture = value;
+                    mPMA = -1;
+                    MarkAsChanged();
+                }
+            }
+        }
+    }
+#endif
 
 	/// <summary>
 	/// Material used by the widget.

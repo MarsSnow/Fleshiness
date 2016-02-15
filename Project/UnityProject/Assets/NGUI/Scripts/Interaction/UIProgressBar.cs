@@ -160,9 +160,9 @@ public class UIProgressBar : UIWidgetContainer
 			return 1f;
 		}
 		set
-		{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			if (mFG != null)
+        {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            if (mFG != null)
 			{
 				mFG.alpha = value;
 				if (mFG.collider != null) mFG.collider.enabled = mFG.alpha > 0.001f;

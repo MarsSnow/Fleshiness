@@ -37,7 +37,7 @@ public class UIButtonColor : UIWidgetContainer
 	/// Color to apply on the pressed event.
 	/// </summary>
 
-	public Color pressed = new Color(183f / 255f, 163f / 255f, 123f / 255f, 1f);
+	public Color pressed =new Color(183f / 255f, 163f / 255f, 123f / 255f, 1f);
 
 	/// <summary>
 	/// Color that will be applied when the button is disabled.
@@ -117,11 +117,11 @@ public class UIButtonColor : UIWidgetContainer
 			mStartingColor = mDefaultColor;
 		}
 		else if (tweenTarget != null)
-		{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
+        {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
 			Renderer ren = tweenTarget.renderer;
 #else
-			Renderer ren = tweenTarget.GetComponent<Renderer>();
+            Renderer ren = tweenTarget.GetComponent<Renderer>();
 #endif
 			if (ren != null)
 			{
@@ -129,11 +129,11 @@ public class UIButtonColor : UIWidgetContainer
 				mStartingColor = mDefaultColor;
 			}
 			else
-			{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
+            {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
 				Light lt = tweenTarget.light;
 #else
-				Light lt = tweenTarget.GetComponent<Light>();
+                Light lt = tweenTarget.GetComponent<Light>();
 #endif
 				if (lt != null)
 				{
@@ -309,9 +309,11 @@ public class UIButtonColor : UIWidgetContainer
 		if (tweenTarget != null)
 		{
 			switch (mState)
-			{
-				case State.Hover: tc = TweenColor.Begin(tweenTarget, duration, hover); break;
-				case State.Pressed: tc = TweenColor.Begin(tweenTarget, duration, pressed); break;
+            {
+                case State.Hover: tc = TweenColor.Begin(tweenTarget, duration, Color.white); break;
+                case State.Pressed: tc = TweenColor.Begin(tweenTarget, duration, Color.white); break;
+				//case State.Hover: tc = TweenColor.Begin(tweenTarget, duration, hover); break;
+				//case State.Pressed: tc = TweenColor.Begin(tweenTarget, duration, pressed); break;
 				case State.Disabled: tc = TweenColor.Begin(tweenTarget, duration, disabledColor); break;
 				default: tc = TweenColor.Begin(tweenTarget, duration, mDefaultColor); break;
 			}

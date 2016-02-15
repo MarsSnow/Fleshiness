@@ -116,8 +116,8 @@ public class UIWidgetInspector : UIRectEditor
 
 		Vector2 screenPoint = HandleUtility.WorldToGUIPoint(point);
 
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		Rect rect = new Rect(screenPoint.x - 7f, screenPoint.y - 7f, 14f, 14f);
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        Rect rect = new Rect(screenPoint.x - 7f, screenPoint.y - 7f, 14f, 14f);
 #else
 		Rect rect = new Rect(screenPoint.x - 5f, screenPoint.y - 9f, 14f, 14f);
 #endif
@@ -335,9 +335,9 @@ public class UIWidgetInspector : UIRectEditor
 			sides = anchor.rect.worldCorners;
 		}
 		else
-		{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			Camera cam = anchor.target.camera;
+        {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            Camera cam = anchor.target.camera;
 #else
 			Camera cam = anchor.target.GetComponent<Camera>();
 #endif
@@ -375,8 +375,8 @@ public class UIWidgetInspector : UIRectEditor
 		if (Event.current.GetTypeForControl(id) == EventType.Repaint)
 		{
 			Vector2 screenPoint = HandleUtility.WorldToGUIPoint(theirPos);
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			Rect rect = new Rect(screenPoint.x - 7f, screenPoint.y - 7f, 14f, 14f);
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            Rect rect = new Rect(screenPoint.x - 7f, screenPoint.y - 7f, 14f, 14f);
 #else
 			Rect rect = new Rect(screenPoint.x - 5f, screenPoint.y - 9f, 14f, 14f);
 #endif

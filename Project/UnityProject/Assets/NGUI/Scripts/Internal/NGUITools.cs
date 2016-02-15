@@ -106,9 +106,9 @@ static public class NGUITools
 			}
 
 			if (mListener != null && mListener.enabled && NGUITools.GetActive(mListener.gameObject))
-			{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-				AudioSource source = mListener.audio;
+            {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+                AudioSource source = mListener.audio;
 #else
 				AudioSource source = mListener.GetComponent<AudioSource>();
 #endif
@@ -380,20 +380,20 @@ static public class NGUITools
 			if (w != null)
 			{
 				Vector3[] corners = w.localCorners;
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
 				box.center = Vector3.Lerp(corners[0], corners[2], 0.5f);
 #else
-				box.offset = Vector3.Lerp(corners[0], corners[2], 0.5f);
+                box.offset = Vector3.Lerp(corners[0], corners[2], 0.5f);
 #endif
 				box.size = corners[2] - corners[0];
 			}
 			else
 			{
 				Bounds b = NGUIMath.CalculateRelativeWidgetBounds(go.transform, considerInactive);
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
 				box.center = b.center;
 #else
-				box.offset = b.center;
+                box.offset = b.center;
 #endif
 				box.size = new Vector2(b.size.x, b.size.y);
 			}
@@ -556,8 +556,8 @@ static public class NGUITools
 			for (int i = 0, imax = widgets.Length; i < imax; ++i)
 			{
 				UIWidget w = widgets[i];
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-				if (w.cachedGameObject != go && (w.collider != null || w.GetComponent<Collider2D>() != null)) continue;
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+                if (w.cachedGameObject != go && (w.collider != null || w.GetComponent<Collider2D>() != null)) continue;
 #else
 				if (w.cachedGameObject != go && (w.GetComponent<Collider>() != null || w.GetComponent<Collider2D>() != null)) continue;
 #endif
@@ -768,8 +768,8 @@ static public class NGUITools
 		{
 			UICamera cam = root.GetComponentInChildren<UICamera>();
 
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			if (cam != null && cam.camera.isOrthoGraphic == advanced3D)
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            if (cam != null && cam.camera.isOrthoGraphic == advanced3D)
 #else
 			if (cam != null && cam.GetComponent<Camera>().orthographic == advanced3D)
 #endif
@@ -1500,9 +1500,9 @@ static public class NGUITools
 	/// </summary>
 
 	static public Vector3[] GetSides (this Camera cam, float depth, Transform relativeTo)
-	{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		if (cam.isOrthoGraphic)
+    {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        if (cam.isOrthoGraphic)
 #else
 		if (cam.orthographic)
 #endif
@@ -1579,9 +1579,9 @@ static public class NGUITools
 	/// </summary>
 
 	static public Vector3[] GetWorldCorners (this Camera cam, float depth, Transform relativeTo)
-	{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		if (cam.isOrthoGraphic)
+    {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        if (cam.isOrthoGraphic)
 #else
 		if (cam.orthographic)
 #endif

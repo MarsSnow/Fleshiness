@@ -70,7 +70,13 @@ public class UISpriteAnimation : MonoBehaviour
 	{
 		if (mActive && mSpriteNames.Count > 1 && Application.isPlaying && mFPS > 0)
 		{
-			mDelta += RealTime.deltaTime;
+            float realDeltaTime = RealTime.deltaTime;
+
+            if(realDeltaTime < 0.5f)
+            {
+                mDelta += realDeltaTime;
+            }
+            
 			float rate = 1f / mFPS;
 
 			if (rate < mDelta)

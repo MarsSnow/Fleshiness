@@ -1308,9 +1308,9 @@ public class UIWidget : UIRect
 	static public bool showHandles
 	{
 		get
-		{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			if (showHandlesWithMoveTool)
+        {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            if (showHandlesWithMoveTool)
 			{
 				return UnityEditor.Tools.current == UnityEditor.Tool.Move;
 			}

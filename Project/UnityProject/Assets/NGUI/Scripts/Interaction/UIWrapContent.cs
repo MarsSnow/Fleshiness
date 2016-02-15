@@ -1,6 +1,7 @@
 //----------------------------------------------
 //            NGUI: Next-Gen UI kit
 // Copyright © 2011-2014 Tasharen Entertainment
+// 修改者：刘靖
 //----------------------------------------------
 
 using UnityEngine;
@@ -118,6 +119,23 @@ public class UIWrapContent : MonoBehaviour
 		mChildren.Sort(UIGrid.SortByName);
 		ResetChildPositions();
 	}
+
+
+    public void RestrictWithinBounds()
+    {
+        SortBasedOnScrollMovement();
+        WrapContent();      
+        if (mHorizontal)
+        {
+            mScroll.MoveRelative(new Vector3(1, 0, 0));
+        }
+        else
+        {
+            mScroll.MoveRelative(new Vector3(0, 1, 0));
+        }
+
+    }
+
 
 	/// <summary>
 	/// Cache the scroll view and return 'false' if the scroll view is not found.
@@ -266,6 +284,7 @@ public class UIWrapContent : MonoBehaviour
 			}
 		}
 		mScroll.restrictWithinPanel = !allWithinRange;
+        mFirstTime = false;
 	}
 
 	/// <summary>

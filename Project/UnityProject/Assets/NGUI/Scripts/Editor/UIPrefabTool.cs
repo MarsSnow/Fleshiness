@@ -437,9 +437,9 @@ public class UIPrefabTool : EditorWindow
 		root.transform.position = new Vector3(0f, 0f, 10000f);
 		root.layer = item.prefab.layer;
 
-		// Set up the camera
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		Camera cam = camGO.camera;
+        // Set up the camera
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        Camera cam = camGO.camera;
 		cam.isOrthoGraphic = true;
 #else
 		Camera cam = camGO.GetComponent<Camera>();
@@ -534,8 +534,8 @@ public class UIPrefabTool : EditorWindow
 
 		// Set the camera's properties
 		cam.cullingMask = mask;
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		cam.isOrthoGraphic = true;
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        cam.isOrthoGraphic = true;
 #else
 		cam.orthographic = true;
 #endif
@@ -579,8 +579,8 @@ public class UIPrefabTool : EditorWindow
 
 		cam.transform.position = pos;
 		cam.transform.rotation = rot;
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		cam.isOrthoGraphic = point.isOrthographic;
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        cam.isOrthoGraphic = point.isOrthographic;
 #else
 		cam.orthographic = point.isOrthographic;
 #endif
@@ -628,8 +628,8 @@ public class UIPrefabTool : EditorWindow
 			float.TryParse(parts[1], out far);
 			float.TryParse(parts[2], out fov);
 
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			cam.isOrthoGraphic = false;
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            cam.isOrthoGraphic = false;
 #else
 			cam.orthographic = false;
 #endif

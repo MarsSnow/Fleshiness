@@ -27,6 +27,15 @@ public class UITextureInspector : UIBasicSpriteEditor
 	{
 		if (target == null) return false;
 		SerializedProperty sp = NGUIEditorTools.DrawProperty("Texture", serializedObject, "mTexture");
+#if !UNITY_IOS
+        //add by jonny
+        Texture2D alphaTex = EditorGUILayout.ObjectField(mTex.alphaTexture, typeof(Texture2D)) as Texture2D;
+        if (alphaTex != null)
+        {
+            mTex.alphaTexture = alphaTex;
+        }
+
+#endif
 		NGUIEditorTools.DrawProperty("Material", serializedObject, "mMat");
 
 		if (sp != null) NGUISettings.texture = sp.objectReferenceValue as Texture;

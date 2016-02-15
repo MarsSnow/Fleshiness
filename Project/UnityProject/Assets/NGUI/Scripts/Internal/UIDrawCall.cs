@@ -17,6 +17,12 @@ using System.Collections.Generic;
 [AddComponentMenu("NGUI/Internal/Draw Call")]
 public class UIDrawCall : MonoBehaviour
 {
+    private const string kTextureShader0 = "Unlit/Transparent Colored";
+    private const string kTextureShader1 = "Hidden/Unlit/Transparent Colored 1";
+    private const string kTextureShader2 = "Hidden/Unlit/Transparent Colored 2";
+    private const string kTextureShader3 = "Hidden/Unlit/Transparent Colored 3";
+    private const string kTextureShader4 = "Hidden/Unlit/Transparent Colored (TextureClip)";
+
 	static BetterList<UIDrawCall> mActiveList = new BetterList<UIDrawCall>();
 	static BetterList<UIDrawCall> mInactiveList = new BetterList<UIDrawCall>();
 
@@ -58,6 +64,7 @@ public class UIDrawCall : MonoBehaviour
 
 	Material		mMaterial;		// Material used by this draw call
 	Texture			mTexture;		// Main texture used by the material
+    Texture         mAlphaTexture;		// Main texture used by the material
 	Shader			mShader;		// Shader used by the dynamically created material
 	int				mClipCount = 0;	// Number of times the draw call's content is getting clipped
 	Transform		mTrans;			// Cached transform
@@ -213,11 +220,37 @@ public class UIDrawCall : MonoBehaviour
 		set
 		{
 			mTexture = value;
-			if (mDynamicMat != null) mDynamicMat.mainTexture = value;
+            if (mDynamicMat != null)
+            {
+                mDynamicMat.mainTexture = value;
+                mDynamicMat.SetInt("_UseMainTexAlpha", mDynamicMat.GetTexture("_AlphaTex") == null ? 1 : 0);
+            }
 		}
 	}
-
-	/// <summary>
+#if !UNITY_IOS
+    //add by jonny
+    public Texture alphaTexture
+    {
+        get
+        {
+            if (mAlphaTexture == null)
+            {
+                mAlphaTexture = mDynamicMat.GetTexture("_AlphaTex");                
+            }
+            return mAlphaTexture;
+        }
+        set
+        {
+            mAlphaTexture = value;
+            if (mDynamicMat != null)
+            { 
+                mDynamicMat.SetTexture("_AlphaTex", value);
+                mDynamicMat.SetInt("_UseMainTexAlpha", value == null ? 1 : 0);
+            }
+        }
+    }
+#endif
+    /// <summary>
 	/// Shader used by the material.
 	/// </summary>
 
@@ -350,8 +383,30 @@ public class UIDrawCall : MonoBehaviour
 
 		// Assign the main texture
 		if (mTexture != null) mDynamicMat.mainTexture = mTexture;
+#if !UNITY_IOS
+        //add by jonny
+        string shaderName = mDynamicMat.shader.name;
+        if(shaderName.Equals(kTextureShader0)||
+            shaderName.Equals(kTextureShader1)||
+            shaderName.Equals(kTextureShader2)||
+            shaderName.Equals(kTextureShader3)||
+            shaderName.Equals(kTextureShader4))
+        {
+            if (alphaTexture != null)
+            {
+                mDynamicMat.SetTexture("_AlphaTex", alphaTexture);
+                mDynamicMat.SetInt("_UseMainTexAlpha", 0);
+            }
+            else
+            {
+                mDynamicMat.SetInt("_UseMainTexAlpha", 1);
+            }
+        }   
+#else
+        mDynamicMat.SetInt("_UseMainTexAlpha", 1);
+#endif
 
-		// Update the renderer
+        // Update the renderer
 		if (mRenderer != null) mRenderer.sharedMaterials = new Material[] { mDynamicMat };
 		return mDynamicMat;
 	}
@@ -706,6 +761,7 @@ public class UIDrawCall : MonoBehaviour
 		manager = null;
 		mMaterial = null;
 		mTexture = null;
+        mAlphaTexture = null;
 		clipTexture = null;
 
 		if (mRenderer != null)

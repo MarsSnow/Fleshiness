@@ -22,9 +22,9 @@ public class UIViewport : MonoBehaviour
 	Camera mCam;
 
 	void Start ()
-	{
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-		mCam = camera;
+    {
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+        mCam = camera;
 #else
 		mCam = GetComponent<Camera>();
 #endif

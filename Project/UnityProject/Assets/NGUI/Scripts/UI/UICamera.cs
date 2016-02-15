@@ -459,10 +459,10 @@ public class UICamera : MonoBehaviour
 
 	/// <summary>
 	/// Caching is always preferable for performance.
-	/// </summary>
+    /// </summary>
 
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-	public Camera cachedCamera { get { if (mCam == null) mCam = camera; return mCam; } }
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+    public Camera cachedCamera { get { if (mCam == null) mCam = camera; return mCam; } }
 #else
 	public Camera cachedCamera { get { if (mCam == null) mCam = GetComponent<Camera>(); return mCam; } }
 #endif
@@ -686,8 +686,8 @@ public class UICamera : MonoBehaviour
 		while (trans != null)
 		{
 			if (trans.GetComponent<UIPanel>() != null) return null;
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			Rigidbody rb = trans.rigidbody;
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            Rigidbody rb = trans.rigidbody;
 #else
 			Rigidbody rb = trans.GetComponent<Rigidbody>();
 #endif

@@ -326,9 +326,9 @@ public static class NGUIContextMenu
 					AddItem("Attach/Scroll View", false, Attach, typeof(UIScrollView));
 					NGUIContextMenu.AddSeparator("Attach/");
 				}
-			}
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			else if (target.collider == null && target.GetComponent<Collider2D>() == null)
+            }
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            else if (target.collider == null && target.GetComponent<Collider2D>() == null)
 #else
 			else if (target.GetComponent<Collider>() == null && target.GetComponent<Collider2D>() == null)
 #endif
@@ -347,10 +347,10 @@ public static class NGUIContextMenu
 					AddItem("Attach/Center Scroll View on Child", false, Attach, typeof(UICenterOnChild));
 					header = true;
 				}
-			}
+            }
 
-#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
-			if (target.collider != null || target.GetComponent<Collider2D>() != null)
+#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
+            if (target.collider != null || target.GetComponent<Collider2D>() != null)
 #else
 			if (target.GetComponent<Collider>() != null || target.GetComponent<Collider2D>() != null)
 #endif
