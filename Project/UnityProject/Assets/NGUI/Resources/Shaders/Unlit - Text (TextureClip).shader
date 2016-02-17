@@ -63,7 +63,7 @@ Shader "Hidden/Unlit/Text (TextureClip)"
 			half4 frag (v2f IN) : COLOR
 			{
 				half4 col = IN.color;
-				col.a *= tex2D(_MainTex, IN.texcoord).a * tex2D(_ClipTex, IN.clipUV).a;
+				col.a *= tex2D(_MainTex, IN.texcoord).a * (1 - tex2D(_ClipTex, IN.clipUV).a);
 				return col;
 			}
 			ENDCG

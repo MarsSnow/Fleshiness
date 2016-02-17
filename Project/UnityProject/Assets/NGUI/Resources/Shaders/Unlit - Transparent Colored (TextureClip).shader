@@ -4,6 +4,9 @@ Shader "Hidden/Unlit/Transparent Colored (TextureClip)"
 	Properties
 	{
 		_MainTex ("Base (RGB), Alpha (A)", 2D) = "black" {}
+		//add by jonny
+		_AlphaTex ("Alpha (A)", 2D) = "black" {}
+		_UseMainTexAlpha ("UseMainTexAlpha", int ) = 0
 	}
 
 	SubShader
@@ -31,9 +34,15 @@ Shader "Hidden/Unlit/Transparent Colored (TextureClip)"
 			#pragma vertex vert
 			#pragma fragment frag
 			#include "UnityCG.cginc"
+			#include "MyShaderDefine.cginc"
 
 			sampler2D _MainTex;
 			sampler2D _ClipTex;
+			
+			//add by jonny
+			sampler2D _AlphaTex;
+			int _UseMainTexAlpha;
+			
 			float4 _ClipRange0 = float4(0.0, 0.0, 1.0, 1.0);
 
 			struct appdata_t
@@ -63,8 +72,24 @@ Shader "Hidden/Unlit/Transparent Colored (TextureClip)"
 
 			half4 frag (v2f IN) : COLOR
 			{
-				half4 col = tex2D(_MainTex, IN.texcoord) * IN.color;
-				col.a *= tex2D(_ClipTex, IN.clipUV).a;
+				half4 col = tex2D(_MainTex, IN.texcoord);
+				
+				//add by jonny
+				if(_UseMainTexAlpha == 0)	
+				{
+					col.a = tex2D(_AlphaTex, IN.texcoord).r;
+				}
+				
+				if(IN.color.r < 0.001)
+			    {
+			    	float grey = dot(col.rgb, float3(0.299, 0.587, 0.114));
+			    	col.rgb = float3(grey, grey, grey);
+			    }
+			    else
+			    {
+					col = col * IN.color;
+				}
+				col.a *= (1-tex2D(_ClipTex, IN.clipUV).a);
 				return col;
 			}
 			ENDCG

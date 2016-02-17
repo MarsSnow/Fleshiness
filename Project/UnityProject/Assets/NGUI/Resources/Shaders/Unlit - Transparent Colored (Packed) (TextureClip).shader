@@ -63,7 +63,7 @@ Shader "Unlit/Transparent Colored (Packed) (TextureClip)"
 
 			half4 frag (v2f IN) : COLOR
 			{
-				half alpha = tex2D(_ClipTex, IN.worldPos * 0.5 + float2(0.5, 0.5)).a;
+				half alpha = 1 - tex2D(_ClipTex, IN.worldPos * 0.5 + float2(0.5, 0.5)).a;
 				half4 mask = tex2D(_MainTex, IN.texcoord);
 				half4 mixed = saturate(ceil(IN.color - 0.5));
 				half4 col = saturate((mixed * 0.51 - IN.color) / -0.49);

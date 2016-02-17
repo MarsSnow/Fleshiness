@@ -8,7 +8,8 @@ public class UIDrawCallOverview : EditorWindow
     [MenuItem("NGUI/Open/Draw Call Overview")]
     static public void OpenPanelOverview()
     {
-        EditorWindow.GetWindow<UIDrawCallOverview>(false, "Draw Calls", true);
+        UIDrawCallOverview window = EditorWindow.GetWindow<UIDrawCallOverview>(false, "Draw Calls", true);
+        window.Init();
     }
 
     //TODO make fold out all draw calls button when they're not.
@@ -16,8 +17,8 @@ public class UIDrawCallOverview : EditorWindow
 
     readonly Dictionary<string, int> _depths = new Dictionary<string, int>();
     private bool _depthsDirty = false;
-
-
+    private bool m_onlyShowSelectedPanel;
+    private UIPanel m_curPanel;
     readonly Color32[] _allColors = new Color32[]
     {
         new Color32(124,252,0,255),        //lawn green
@@ -40,7 +41,18 @@ public class UIDrawCallOverview : EditorWindow
     };
     private readonly Dictionary<UIPanel, Color32> _activeColors = new Dictionary<UIPanel, Color32>();
 
-    
+    private void Init()
+    {
+        if (Selection.activeGameObject == null)
+        {
+            return;
+        }
+        UIPanel[] panels = Selection.activeGameObject.GetComponentsInChildren<UIPanel>();
+        if (panels != null && panels.Length > 0)
+        {
+            m_curPanel = panels[0];
+        }
+    }
 
     void OnGUI()
     {
@@ -51,12 +63,29 @@ public class UIDrawCallOverview : EditorWindow
             _depthsDirty = false;
         }
         GUILayout.BeginVertical();
-        mScroll = GUILayout.BeginScrollView(mScroll);
         
+        bool onlyShowSelelctedPanel = EditorGUILayout.Toggle("仅显示选中的Panel",m_onlyShowSelectedPanel);
+        if (onlyShowSelelctedPanel && onlyShowSelelctedPanel != m_onlyShowSelectedPanel)
+        {
+            Init();
+        }
+        m_onlyShowSelectedPanel = onlyShowSelelctedPanel;
+        mScroll = GUILayout.BeginScrollView(mScroll);
+
+        if (m_onlyShowSelectedPanel && m_curPanel == null)
+        {
+            m_onlyShowSelectedPanel = false;
+            EditorGUILayout.LabelField("请选择一个UIPanel");
+            return;
+        }
         GUI.backgroundColor = new Color32(30, 144, 255, 255);
         for (int i = 0; i < UIDrawCall.activeList.size; ++i)
         {
             UIDrawCall dc = UIDrawCall.activeList[i];
+            if (m_onlyShowSelectedPanel && dc.panel != m_curPanel)
+            {
+                continue;
+            }
             string key = "Draw Call " + (1 + dc.renderQueue);
             
 

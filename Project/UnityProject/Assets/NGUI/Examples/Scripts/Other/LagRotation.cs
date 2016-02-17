@@ -7,30 +7,15 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Examples/Lag Rotation")]
 public class LagRotation : MonoBehaviour
 {
+	public int updateOrder = 0;
 	public float speed = 10f;
 	public bool ignoreTimeScale = false;
-
+	
 	Transform mTrans;
 	Quaternion mRelative;
 	Quaternion mAbsolute;
-
-	public void OnRepositionEnd ()
-	{
-		Interpolate(1000f);
-	}
-
-	void Interpolate (float delta)
-	{
-		Transform parent = mTrans.parent;
-
-		if (parent != null)
-		{
-			mAbsolute = Quaternion.Slerp(mAbsolute, parent.rotation * mRelative, delta * speed);
-			mTrans.rotation = mAbsolute;
-		}
-	}
-
-	void OnEnable ()
+	
+	void OnEnable()
 	{
 		mTrans = transform;
 		mRelative = mTrans.localRotation;
@@ -39,6 +24,13 @@ public class LagRotation : MonoBehaviour
 
 	void Update ()
 	{
-		Interpolate(ignoreTimeScale ? RealTime.deltaTime : Time.deltaTime);
+		Transform parent = mTrans.parent;
+		
+		if (parent != null)
+		{
+			float delta = ignoreTimeScale ? RealTime.deltaTime : Time.deltaTime;
+			mAbsolute = Quaternion.Slerp(mAbsolute, parent.rotation * mRelative, delta * speed);
+			mTrans.rotation = mAbsolute;
+		}
 	}
 }

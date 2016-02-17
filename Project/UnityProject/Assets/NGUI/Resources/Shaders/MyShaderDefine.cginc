@@ -1,0 +1,9 @@
+#ifndef UNITY_SHADER_CUSTOM_DEFINE
+#define UNITY_SHADER_CUSTOM_DEFINE
+
+
+#define ETC_TEST
+
+#endif
+
+

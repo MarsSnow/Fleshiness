@@ -6,8 +6,10 @@ AnimationClip:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Button
-  serializedVersion: 3
+  serializedVersion: 4
+  m_AnimationType: 1
   m_Compressed: 0
+  m_UseHighQualityCurve: 1
   m_RotationCurves: []
   m_CompressedRotationCurves: []
   m_PositionCurves: []
@@ -19,27 +21,27 @@ AnimationClip:
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 1.06041312, y: -.726661325, z: 0}
         outSlope: {x: 1.06041312, y: -.726661325, z: 0}
-        tangentMode: -1
+        tangentMode: -1086716294
       - time: .0666666701
         value: {x: 1.07069421, y: .951555908, z: 1}
         inSlope: {x: -.207494974, y: .716087162, z: 0}
         outSlope: {x: -.207494974, y: .716087162, z: 0}
-        tangentMode: -1
+        tangentMode: 1060589949
       - time: .0833333358
-        value: {x: 1.05461621, y: .9756549, z: 1}
-        inSlope: {x: -1.59596586, y: 2.06545687, z: 0}
-        outSlope: {x: -1.59596586, y: 2.06545687, z: 0}
+        value: {x: 1.05661619, y: .977654874, z: 1}
+        inSlope: {x: -1.38596678, y: 2.27545667, z: 0}
+        outSlope: {x: -1.38596678, y: 2.27545667, z: 0}
         tangentMode: 0
       - time: .150000006
         value: {x: .947743952, y: 1.13145888, z: 1}
-        inSlope: {x: .404219031, y: .843476415, z: 0}
-        outSlope: {x: .404219031, y: .843476415, z: 0}
-        tangentMode: -1
+        inSlope: {x: -.345781147, y: .0934761763, z: 0}
+        outSlope: {x: -.345781147, y: .0934761763, z: 0}
+        tangentMode: 1073928290
       - time: .216666669
-        value: {x: 1.10000002, y: 1.10000002, z: 1}
-        inSlope: {x: 2.28384113, y: -.47188285, z: 0}
-        outSlope: {x: 2.28384113, y: -.47188285, z: 0}
-        tangentMode: -1
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: .783840775, y: -1.9718833, z: 0}
+        outSlope: {x: .783840775, y: -1.9718833, z: 0}
+        tangentMode: 1063985476
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: 
@@ -58,11 +60,32 @@ AnimationClip:
     path: 
     classID: 111
     script: {fileID: 0}
+  m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: .216666669
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
   m_EditorCurves:
   - curve:
       serializedVersion: 2
@@ -93,13 +116,13 @@ AnimationClip:
         tangentMode: 10
       - time: .150000006
         value: .947743952
-        inSlope: .404219031
-        outSlope: .404219031
+        inSlope: -.345781147
+        outSlope: -.345781147
         tangentMode: 10
       - time: .216666669
-        value: 1.10000002
-        inSlope: 2.28384113
-        outSlope: 2.28384113
+        value: 1
+        inSlope: .783840775
+        outSlope: .783840775
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -122,13 +145,13 @@ AnimationClip:
         tangentMode: 10
       - time: .150000006
         value: 1.13145888
-        inSlope: .843476415
-        outSlope: .843476415
+        inSlope: .0934761763
+        outSlope: .0934761763
         tangentMode: 10
       - time: .216666669
-        value: 1.10000002
-        inSlope: -.47188285
-        outSlope: -.47188285
+        value: 1
+        inSlope: -1.9718833
+        outSlope: -1.9718833
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2

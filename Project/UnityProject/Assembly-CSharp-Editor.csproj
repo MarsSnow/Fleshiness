@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{B67EF6A7-F85A-A871-FF13-9BFE6A9B0524}</ProjectGuid>
+	<ProjectGuid>{3CC9D2C0-C461-07D9-EDF3-4FFB4DE5C299}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_9;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_7_0;UNITY_4_7;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity4_7_0/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity4_7_0/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +124,7 @@
      <Compile Include="Assets\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIDragObjectEditor.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallOverview.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallViewer.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIEventTriggerEditor.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIFontInspector.cs" />
@@ -164,6 +165,7 @@
      <None Include="Assets\Scripts\Plugins\Spine\Shaders\HiddenPass.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTTextureEffect.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored  Additive 3.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTGreyEffect.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAdditiveEffectAvatar.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTEdgeTransparent.shader" />
@@ -188,6 +190,7 @@
      <None Include="Assets\Scripts\Shaders\AlphaTestDiffuse.shader" />
      <None Include="Assets\Resources\Common\Shader\MyMobile Particle ParticleAdd.shader" />
      <None Include="Assets\Resources\Common\Shader\Multiply.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored  Additive 1.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAdditive.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAlphaBlended2.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAdditiveExt.shader" />
@@ -216,18 +219,22 @@
      <None Include="Assets\Scripts\Shaders\OutLine.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTTerrain.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTTransparentAvatar.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored(Hui).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored Additive.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
      <None Include="Assets\Scripts\Plugins\Spine\Shaders\Bones.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTStatic.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTTextureBlend.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\MyShaderDefine.cginc" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTDistort.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTGreyEffect2.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAvatar.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\link.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored  Additive 2.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTProjectorLight.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\Scripts\Plugins\Spine\Shaders\Skeleton.shader" />
@@ -253,44 +260,44 @@
      <None Include="Assets\Resources\Common\Shader\Alpha-VertexLit.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTTextureExtAdd.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.9/Standalone/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity4_7_0/Editor/Data/UnityExtensions/Unity/GUISystem/4.7.0/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.9/Editor/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity4_7_0/Editor/Data/UnityExtensions/Unity/GUISystem/4.7.0/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="HOTween">
- <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/HOTween/Plugins/HOTween.dll</HintPath>
+ <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Assets/HOTween/Plugins/HOTween.dll</HintPath>
  </Reference>
  <Reference Include="HOTweenV1_Editor">
- <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/HOTween/Plugins/Editor/HOTweenV1_Editor.dll</HintPath>
+ <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Assets/HOTween/Plugins/Editor/HOTweenV1_Editor.dll</HintPath>
  </Reference>
  <Reference Include="Messages">
- <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/Resources/Common/Lib/Messages.dll</HintPath>
+ <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Assets/Resources/Common/Lib/Messages.dll</HintPath>
  </Reference>
  <Reference Include="protobuf-net">
- <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/Resources/Common/Lib/protobuf-net.dll</HintPath>
+ <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Assets/Resources/Common/Lib/protobuf-net.dll</HintPath>
  </Reference>
  <Reference Include="ProtobufSerializer">
- <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/Resources/Common/Lib/ProtobufSerializer.dll</HintPath>
+ <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Assets/Resources/Common/Lib/ProtobufSerializer.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
- <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
- <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+ <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
  </Reference>
  <Reference Include="UnityVS.VersionSpecific">
- <HintPath>E:/UnityProject/Fleshiness/PenSprite004/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
+ <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity4_7_0/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{F069FBA5-5275-5571-DDE3-D5ED097E882A}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{5B580621-09B4-68CB-B5F4-5B9DD210A60F}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript.unityproj">
-      <Project>{3F0E016A-AD72-7C6C-4FE8-786962F65409}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+      <Project>{137A7369-EC96-0CC2-09B9-FE1D6DE1A3E3}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
