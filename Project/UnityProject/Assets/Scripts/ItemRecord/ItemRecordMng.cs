@@ -5,54 +5,50 @@ using LitJson;
 
 public static class ItemRecordMng
 {
+    private const string kKeyString = "family:{0}|species:{1}";
 
-    public static int GetCurItemState(int family, int species)
+    public static string GetCurItemState(int family, int species)
     {
-        ItemRecordKey twoArgKey = new ItemRecordKey(family, species);
-        Dictionary<ItemRecordKey, int> dic = GetMap();
+        string twoArgKey = string.Format(kKeyString, family, species);
+        Dictionary<string, string> dic = GetMap();
 
         bool isContains = dic.ContainsKey(twoArgKey);
         if (isContains)
         {
-            int stateValue = 0;
+            string stateValue = "false";
             dic.TryGetValue(twoArgKey, out stateValue);
             return stateValue;
         }
-        return 0;
+        return "notContain";
     }
 
-    public static void SetCurItemState(int family, int species, int curState)
+    public static void SetCurItemState(int family, int species, string curState)
     {
-        ItemRecordKey twoArgKey = new ItemRecordKey(family, species);
-        Dictionary<ItemRecordKey, int> dic = GetMap();
+        string keyString = string.Format(kKeyString, family, species);
+        Dictionary<string, string> dic = GetMap();
 
-        bool isContains = dic.ContainsKey(twoArgKey);
+        bool isContains = dic.ContainsKey(keyString);
         if (isContains)
         {
-            int stateValue = 0;
-            dic.TryGetValue(twoArgKey, out stateValue);
-            stateValue = curState;
+            dic[keyString] = curState;
         }
         else
         {
-            dic.Add(twoArgKey, curState);
+            dic.Add(keyString, curState);
         }
         Write(dic);
     }
 
-    private static void Write(Dictionary<ItemRecordKey, int> dic)
+
+    private static void Write(Dictionary<string, string> dic)
     {
-        List<int> list = new List<int>();
-        list.Add(1);
-        Dictionary < int, int> dics = new Dictionary<int, int>();
-        dics.Add(0,1);
-        string chatInfoStr = JsonMapper.ToJson(dics);
+        string chatInfoStr = JsonMapper.ToJson(dic);     
         PrefsMng.SetLocalArchive(PrefsType.ItemRecord, chatInfoStr);
     }
 
-    private static Dictionary<ItemRecordKey, int> GetMap()
+    private static Dictionary<string, string> GetMap()
     {
-        Dictionary<ItemRecordKey, int> dic = new Dictionary<ItemRecordKey, int>();
+        Dictionary<string, string> dic = new Dictionary<string, string>();
         string dicStr = "";
         bool isGet = PrefsMng.GetLocalArchive(PrefsType.ItemRecord, out dicStr);
         if (!isGet)
@@ -60,7 +56,7 @@ public static class ItemRecordMng
             PrefsMng.SetLocalArchive(PrefsType.ItemRecord, dicStr);
             return dic;
         }
-        dic = JsonMapper.ToObject<Dictionary<ItemRecordKey, int>>(dicStr);
+        dic = JsonMapper.ToObject<Dictionary<string, string>>(dicStr);
         return dic;
     }
 }

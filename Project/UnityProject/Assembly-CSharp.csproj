@@ -233,6 +233,8 @@
      <Compile Include="Assets\Scripts\Archive\LtPlatform.cs" />
      <Compile Include="Assets\Scripts\Archive\LtSingleton.cs" />
      <Compile Include="Assets\Scripts\Archive\PrefsMng.cs" />
+     <Compile Include="Assets\Scripts\Archive\Protobuf\ProtobufMng.cs" />
+     <Compile Include="Assets\Scripts\Archive\Protobuf\ProtobufSerializeUtility.cs" />
      <Compile Include="Assets\Scripts\Archive\ReadFile.cs" />
      <Compile Include="Assets\Scripts\Archive\WriteFile.cs" />
      <Compile Include="Assets\Scripts\Config\ConfigData.cs" />
@@ -393,6 +395,7 @@
      <None Include="Assets\Scripts\Shaders\ZQLTTextureBlend.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\MyShaderDefine.cginc" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Scripts\Archive\ItemRecord.txt" />
      <None Include="Assets\Scripts\Shaders\ZQLTDistort.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTGreyEffect2.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAvatar.shader" />

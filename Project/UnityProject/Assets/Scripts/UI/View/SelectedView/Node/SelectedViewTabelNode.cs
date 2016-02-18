@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// TabNode
+/// </summary>
 public class SelectedViewTabelNode : MonoBehaviour 
 {
     public UILabel m_nameLabel = null;

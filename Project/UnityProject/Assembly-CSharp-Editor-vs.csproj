@@ -229,6 +229,7 @@
      <None Include="Assets\Scripts\Shaders\ZQLTTextureBlend.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\MyShaderDefine.cginc" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Scripts\Archive\ItemRecord.txt" />
      <None Include="Assets\Scripts\Shaders\ZQLTDistort.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTGreyEffect2.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAvatar.shader" />

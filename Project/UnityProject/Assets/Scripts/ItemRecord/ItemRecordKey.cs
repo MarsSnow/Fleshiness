@@ -1,9 +1,24 @@
 ﻿
 
+using System;
+
 public class ItemRecordKey
 {
-    private int m_x = 0;
-    private int m_y = 1;
+    public int m_x
+    {
+        set { m__x = value; }
+        get { return m__x; }
+
+    }
+    private int m__x = 0;
+
+    public int m_y
+    {
+        set { m__x = value; }
+        get { return m__y; }
+
+    }
+    private int m__y = 0;
 
     public string m_code;
 

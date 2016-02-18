@@ -1,2 +1,0 @@
-F:\New\PenSprite004\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
-E:\UnityProject\Fleshiness\PenSprite004\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache

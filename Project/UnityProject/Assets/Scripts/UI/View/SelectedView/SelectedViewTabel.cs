@@ -18,9 +18,10 @@ public class SelectedViewTabel : MonoBehaviour
 
     private void CreateGrid()
     {
-        int max = ConfigManager.instance.GetConfig(ConfigTypeEnum.Family).Count;
+        int max = ConfigManager.instance.GetConfig(ConfigTypeEnum.Family).Count;                //最大值
 
-        int positionIndex = PrefsMng.GetPrefs(PrefsType.SelectedViewTabIndex);
+        int positionIndex = PrefsMng.GetPrefs(PrefsType.SelectedViewTabIndex);                  //点击位置
+        //左Tab
         for (int i = 0; i < max/2; ++i)
         {
             GameObject nodeObj = (GameObject)Instantiate(m_nodePrefab) as GameObject;
@@ -32,6 +33,7 @@ public class SelectedViewTabel : MonoBehaviour
             }
         }
 
+        //右Tab
         for (int i = max/2; i < max; ++i)
         {
             GameObject nodeObj = (GameObject)Instantiate(m_nodePrefab) as GameObject;
@@ -42,10 +44,5 @@ public class SelectedViewTabel : MonoBehaviour
                 nodeObj.GetComponent<UIToggle>().startsActive = true;
             }
         }
-    }
-
-    private void OnDisable()
-    {
-
     }
 }

@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 using System.IO;
 
 public enum PrefsType
 {
-    SelectedViewTabIndex,
-    ItemRecord,
+    SelectedViewTabIndex,       //Tab记录
+    ItemRecord,                 //Item记录
 }
 
 /// <summary>
@@ -57,10 +56,9 @@ public static class PrefsMng
         string typeName = type.ToString();
         if (isLua)
         {
-            typeName = typeName + ".lua";
+            typeName = typeName + ".txt";
         }
         return typeName;
     }
-
 }
 

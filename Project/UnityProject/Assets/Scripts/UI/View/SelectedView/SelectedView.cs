@@ -14,12 +14,11 @@ public class SelectedView : MonoBehaviour
         MessageManager.AddListener(MsgType.SelectedView.showNode, ShowNode);
         int tabIndex = PrefsMng.GetPrefs(PrefsType.SelectedViewTabIndex);
         InitNode(tabIndex);
-        ItemRecordMng.SetCurItemState(2, 3, 992);
-        //Debug.LogError((ItemRecordMng.GetCurItemState(2, 3)));
     }
 
     private void OnDisable()
     {
+        MessageManager.RemoveListener(MsgType.SelectedView.showNode, ShowNode);
     }
 
     private void ShowNode(Message msg)
