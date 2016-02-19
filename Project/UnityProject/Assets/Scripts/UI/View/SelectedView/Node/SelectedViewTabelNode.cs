@@ -1,8 +1,32 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿/*
+* 　　　　　　　　┏┓　　　┏┓+ +
+*　　　　　　　┏┛┻━━━┛┻┓ + +
+*　　　　　　　┃　　　　　　　┃ 　
+*　　　　　　　┃　　　━　　　┃ ++ + + +
+*　　　　　　 ████━████ ┃+
+*　　　　　　　┃　　　　　　　┃ +
+*　　　　　　　┃　　　┻　　　┃
+*　　　　　　　┃　　　　　　　┃ + +
+*　　　　　　　┗━┓　　　┏━┛
+*　　　　　　　　　┃　　　┃　　　　　　　　　
+*　　　　　　　　　┃　　　┃ + + + +
+*　　　　　　　　　┃　　　┃　
+*　　　　　　　　　┃　　　┃ + 　　　　
+*　　　　　　　　　┃　　　┃
+*　　　　　　　　　┃　　　┃　　+　　　　　　　　　
+*　　　　　　　　　┃　 　　┗━━━┓ + +
+*　　　　　　　　　┃ 　　　　　　　┣┓
+*　　　　　　　　　┃ 　　　　　　　┏┛
+*　　　　　　　　　┗┓┓┏━┳┓┏┛ + + + +
+*　　　　　　　　　　┃┫┫　┃┫┫
+*　　　　　　　　　　┗┻┛　┗┻┛+ + + +
+*/
+
+using UnityEngine;
 
 /// <summary>
-/// TabNode
+/// 类名：叶签Node
+/// @author 彭博
 /// </summary>
 public class SelectedViewTabelNode : MonoBehaviour 
 {

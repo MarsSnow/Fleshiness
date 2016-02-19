@@ -1,8 +1,36 @@
-﻿using UnityEngine;
+﻿/*
+* 　　　　　　　　┏┓　　　┏┓+ +
+*　　　　　　　┏┛┻━━━┛┻┓ + +
+*　　　　　　　┃　　　　　　　┃ 　
+*　　　　　　　┃　　　━　　　┃ ++ + + +
+*　　　　　　 ████━████ ┃+
+*　　　　　　　┃　　　　　　　┃ +
+*　　　　　　　┃　　　┻　　　┃
+*　　　　　　　┃　　　　　　　┃ + +
+*　　　　　　　┗━┓　　　┏━┛
+*　　　　　　　　　┃　　　┃　　　　　　　　　
+*　　　　　　　　　┃　　　┃ + + + +
+*　　　　　　　　　┃　　　┃　
+*　　　　　　　　　┃　　　┃ + 　　　　
+*　　　　　　　　　┃　　　┃
+*　　　　　　　　　┃　　　┃　　+　　　　　　　　　
+*　　　　　　　　　┃　 　　┗━━━┓ + +
+*　　　　　　　　　┃ 　　　　　　　┣┓
+*　　　　　　　　　┃ 　　　　　　　┏┛
+*　　　　　　　　　┗┓┓┏━┳┓┏┛ + + + +
+*　　　　　　　　　　┃┫┫　┃┫┫
+*　　　　　　　　　　┗┻┛　┗┻┛+ + + +
+*/
+using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
 using LitJson;
+using System.Collections;
 
+/// <summary>
+/// 条目记录管理器
+/// @author 彭博
+/// </summary>
 public static class ItemRecordMng
 {
     private const string kKeyString = "family:{0}|species:{1}";

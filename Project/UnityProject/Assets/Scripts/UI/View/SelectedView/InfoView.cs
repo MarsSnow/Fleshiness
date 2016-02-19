@@ -1,6 +1,34 @@
-﻿using UnityEngine;
+﻿/*
+* 　　　　　　　　┏┓　　　┏┓+ +
+*　　　　　　　┏┛┻━━━┛┻┓ + +
+*　　　　　　　┃　　　　　　　┃ 　
+*　　　　　　　┃　　　━　　　┃ ++ + + +
+*　　　　　　 ████━████ ┃+
+*　　　　　　　┃　　　　　　　┃ +
+*　　　　　　　┃　　　┻　　　┃
+*　　　　　　　┃　　　　　　　┃ + +
+*　　　　　　　┗━┓　　　┏━┛
+*　　　　　　　　　┃　　　┃　　　　　　　　　
+*　　　　　　　　　┃　　　┃ + + + +
+*　　　　　　　　　┃　　　┃　
+*　　　　　　　　　┃　　　┃ + 　　　　
+*　　　　　　　　　┃　　　┃
+*　　　　　　　　　┃　　　┃　　+　　　　　　　　　
+*　　　　　　　　　┃　 　　┗━━━┓ + +
+*　　　　　　　　　┃ 　　　　　　　┣┓
+*　　　　　　　　　┃ 　　　　　　　┏┛
+*　　　　　　　　　┗┓┓┏━┳┓┏┛ + + + +
+*　　　　　　　　　　┃┫┫　┃┫┫
+*　　　　　　　　　　┗┻┛　┗┻┛+ + + +
+*/
+
+using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 内容视图
+/// @author 彭博
+/// </summary>
 public class InfoView : MonoBehaviour 
 {
     public Transform m_InfoViewNode = null;
