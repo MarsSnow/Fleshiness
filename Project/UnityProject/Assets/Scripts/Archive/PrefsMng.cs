@@ -56,7 +56,7 @@ public static class PrefsMng
         string typeName = type.ToString();
         if (isLua)
         {
-            typeName = typeName + ".txt";
+            typeName = typeName + ".json";
         }
         return typeName;
     }
