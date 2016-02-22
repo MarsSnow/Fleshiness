@@ -32,8 +32,9 @@ using System.Collections;
 public class HelpView : MonoBehaviour 
 {
 	public GameObject m_returnBtn = null;
-	public GameObject m_downAppBtn = null;
-	public GameObject m_payBtn = null;
+	public UILabel m_infoLbel = null;
+	public UILabel m_payBtnLabel = null;
+	public UILabel m_adBtnLabel = null;
 
 	private void Start () 
 	{
@@ -45,6 +46,9 @@ public class HelpView : MonoBehaviour
 			Globals.instance.m_infoView.gameObject.SetActive(true);
 			Globals.instance.m_helpView.gameObject.SetActive(false);
 		};
+		m_infoLbel.text = "欢迎使用，如果方便，支持我一些吧^_^";
+		m_payBtnLabel.text = "支持一下";
+		m_adBtnLabel.text = "下载其他应用";
 	}
 	
 	private void Update () 
