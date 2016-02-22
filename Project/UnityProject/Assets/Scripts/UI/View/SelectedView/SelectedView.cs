@@ -36,9 +36,11 @@ public class SelectedView : MonoBehaviour
     public UIScrollView[] m_uiScrollViews = null;
     public UIGrid[] m_uiGrids = null;
     public GameObject m_nodePrefab = null;
+    public GameObject m_returnBtn = null;
 
     private void OnEnable()
     {
+        UIEventListener.Get(m_returnBtn).onClick = OnClickReturn;
         MessageManager.AddListener(MsgType.SelectedView.showNode, ShowNode);
         int tabIndex = PrefsMng.GetPrefs(PrefsType.SelectedViewTabIndex);
         InitNode(tabIndex);
@@ -47,6 +49,11 @@ public class SelectedView : MonoBehaviour
     private void OnDisable()
     {
         MessageManager.RemoveListener(MsgType.SelectedView.showNode, ShowNode);
+    }
+
+    private void OnClickReturn(GameObject obj)
+    {
+        Application.Quit(); 
     }
 
     private void ShowNode(Message msg)

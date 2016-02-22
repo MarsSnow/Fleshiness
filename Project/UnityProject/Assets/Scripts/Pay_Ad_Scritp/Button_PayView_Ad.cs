@@ -30,8 +30,8 @@ public class Button_PayView_Ad : MonoBehaviour
 {
     void OnClick()
     {
-        Debug.LogError("ad");
+        Debug.Log("ad");
         //调用Android端的积分界面方法
-        //PaySystemManager.android_java_class.Call("GoToCreditsView", "");
+        PaySystemManager.android_java_class.Call("GoToCreditsView", "");
     }
 }

@@ -46,7 +46,7 @@ public class HelpView : MonoBehaviour
 			Globals.instance.m_infoView.gameObject.SetActive(true);
 			Globals.instance.m_helpView.gameObject.SetActive(false);
 		};
-		m_infoLbel.text = "欢迎使用，如果方便，支持我一些吧^_^";
+		m_infoLbel.text = "欢迎使用，支持我一下吧^_^";
 		m_payBtnLabel.text = "支持一下";
 		m_adBtnLabel.text = "下载其他应用";
 	}

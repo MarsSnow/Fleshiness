@@ -17,24 +17,24 @@ public class MainActivity extends UnityPlayerActivity implements
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
 
-		// ³õÊ¼»¯Í³¼ÆÆ÷
+		// åˆå§‹åŒ–ç»Ÿè®¡å™¨
 		AppConnect.getInstance(MainActivity.this);
-		// ³õÊ¼»¯¿ì½İÖ§¸¶
+		// åˆå§‹åŒ–å¿«æ·æ”¯ä»˜
 		PayConnect.getInstance("681259ee7f6f07887a27d8e3253e9255", "mumayi",
 				MainActivity.this);
-		//´Ó·şÎñÆ÷¶Ë»ñÈ¡»§»ı·Ö:
+		//ä»æœåŠ¡å™¨ç«¯è·å–æˆ·ç§¯åˆ†:
 		AppConnect.getInstance(this).getPoints(this);
 	}
 
-	//Áô¸øC#µ÷ÓÃ
-	//È¥Ö§¸¶½çÃæ
+	//ç•™ç»™C#è°ƒç”¨
+	//å»æ”¯ä»˜ç•Œé¢
 	protected void GoToPayView(String string) {	
 		Intent intent = new Intent();
 		intent.setClass(MainActivity.this, MainPayViewActivity.class);
 		MainActivity.this.startActivity(intent);
 
 	}
-	//È¥BBS½çÃæ
+	//å»BBSç•Œé¢
 
 	protected void GoToBBSView(String string) {	
 //		Intent intent = new Intent();
@@ -51,30 +51,30 @@ public class MainActivity extends UnityPlayerActivity implements
 	}
 	
 	
-	// È¥»ı·ÖÇ½½çÃæ
+	// å»ç§¯åˆ†å¢™ç•Œé¢
 	protected void GoToCreditsView(String string) {	
 		
 		AppConnect.getInstance(this).showOffers(this);
 
 	}
 
-	//µ÷ÓÃAppConnect.getInstance(this).getPoints(this);»á»Øµ÷µÄ·½·¨
+	//è°ƒç”¨AppConnect.getInstance(this).getPoints(this);ä¼šå›è°ƒçš„æ–¹æ³•
 	@Override
 	public void getUpdatePoints(String arg0, int arg1) {
 		UnityPlayer.UnitySendMessage("UnityPayManager",
 				"SetMyUserPoint", "" + arg1);
 
 	}
-	//»ñÈ¡»ı·ÖÊ§°ÜÊ±×Ô¶¯µ÷ÓÃ
+	//è·å–ç§¯åˆ†å¤±è´¥æ—¶è‡ªåŠ¨è°ƒç”¨
 	@Override
 	public void getUpdatePointsFailed(String arg0) {
 	
 	}
-	//»ı·ÖÇ½½çÃæ³É¹¦»ñÈ¡»ı·ÖºóµÄ£º
+	//ç§¯åˆ†å¢™ç•Œé¢æˆåŠŸè·å–ç§¯åˆ†åçš„ï¼š
 	@Override
 	protected void onResume() {
 		super.onResume();
-		//´Ó·şÎñÆ÷¶Ë»ñÈ¡»§»ı·Ö
+		//ä»æœåŠ¡å™¨ç«¯è·å–æˆ·ç§¯åˆ†
 		AppConnect.getInstance(this).getPoints(this);
 	}
 	

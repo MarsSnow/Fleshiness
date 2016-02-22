@@ -35,7 +35,7 @@ UpdatePointsNotifier{
 	// 支付时间
 	String time = "";
 	// 支付描述
-	String goodsDesc = "欢迎使用本软件，软件由作者在业余时间制作和维护�?如果方便，请我喝�?��啤酒吧�?";
+	String goodsDesc = "欢迎使用，支持我一下吧^_^";
 	// 应用或游戏商服务器端回调接口（无服务器可不填写）
 	String notifyUrl = "";
 
