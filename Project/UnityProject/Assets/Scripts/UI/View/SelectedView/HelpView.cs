@@ -32,6 +32,8 @@ using System.Collections;
 public class HelpView : MonoBehaviour 
 {
 	public GameObject m_returnBtn = null;
+    public UILabel m_contact = null;
+    public GameObject m_author = null;
 	public UILabel m_infoLbel = null;
 	public UILabel m_payBtnLabel = null;
 	public UILabel m_adBtnLabel = null;
@@ -46,7 +48,11 @@ public class HelpView : MonoBehaviour
 			Globals.instance.m_infoView.gameObject.SetActive(true);
 			Globals.instance.m_helpView.gameObject.SetActive(false);
 		};
-		m_infoLbel.text = "欢迎使用，支持我一下吧^_^";
+	    m_contact.text = "联系：851104757@qq.com";
+        string path = "Chinese/UI/Icon/pic/about";
+	    Utility.DeleteChildObjects(m_author);
+        Utility.DynamicCreatImageObject(path, m_author.transform, 3, 1, 1, -1, -1);
+		m_infoLbel.text = "打赏一下^_^";
 		m_payBtnLabel.text = "支持一下";
 		m_adBtnLabel.text = "下载其他应用";
 	}

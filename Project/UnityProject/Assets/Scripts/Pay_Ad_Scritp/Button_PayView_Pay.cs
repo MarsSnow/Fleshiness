@@ -32,7 +32,7 @@ public class Button_PayView_Pay : MonoBehaviour
     {
         Debug.Log("pay");
         //调用Android端的支付界面方法
-       PaySystemManager.android_java_class.Call("GoToPayView", "");
+        PaySystemManager.android_java_class.Call("GoToPayView", "");
 
     }
 }

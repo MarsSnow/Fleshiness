@@ -46,14 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyButtonCallBack.cs" />
-     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyButtonInspector.cs" />
-     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyJoystickCallBack.cs" />
-     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyJoystickInspector.cs" />
-     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyTouchInspector.cs" />
-     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyTouchMenu.cs" />
-     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasytouchCallBack.cs" />
-     <Compile Include="Assets\EasyTouch\Plugins\Editor\HTGUILayout.cs" />
      <Compile Include="Assets\Editor\AssetBundle\ExportAssetBundles.cs" />
      <Compile Include="Assets\Editor\CommandBuild.cs" />
      <Compile Include="Assets\Editor\CreateAssetbundles.cs" />
@@ -169,7 +161,6 @@
      <None Include="Assets\Scripts\Shaders\ZQLTGreyEffect.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAdditiveEffectAvatar.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTEdgeTransparent.shader" />
-     <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
      <None Include="Assets\Resources\Common\Shader\OutLighting.shader" />
@@ -183,7 +174,6 @@
      <None Include="Assets\Scripts\Shaders\ZQLTCoreTransparent.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
      <None Include="Assets\Scripts\Plugins\Spine\Shaders\SkeletonLit.shader" />
-     <None Include="Assets\EasyTouch\Readme_first.txt" />
      <None Include="Assets\Resources\Common\Shader\RimLightSpce.shader" />
      <None Include="Assets\HOTween\readme.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
@@ -195,16 +185,13 @@
      <None Include="Assets\Scripts\Shaders\ZQLTAlphaBlended2.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAdditiveExt.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
      <None Include="Assets\Scripts\Shaders\ZQLTAlphaTest.shader" />
      <None Include="Assets\Scripts\Shaders\Blur.shader" />
      <None Include="Assets\Scripts\Shaders\mmt_noco.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
      <None Include="Assets\Scripts\Shaders\ZQLTTextureAdd.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTLightDBAvatar.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
      <None Include="Assets\Scripts\Shaders\ZQLTBrightFade.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
      <None Include="Assets\Scripts\Shaders\OutterLineComposer.shader" />
@@ -245,24 +232,17 @@
      <None Include="Assets\Resources\Common\Shader\Alpha-Diffuse.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTTextureEffectExt.shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
-     <None Include="Assets\Resources\Chinese\UI\Atlas\Common\Atlas\Common_Atlas.txt" />
-     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
      <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\Resources\Common\Shader\Map.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\Scripts\Shaders\ZQLTEmission.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTStamp.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTAlphaBlended.shader" />
-     <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
      <None Include="Assets\Resources\Common\Shader\InterlacePatternAdditive.shader" />
      <None Include="Assets\NGUI\Examples\Resources\Localization.txt" />
      <None Include="Assets\Resources\Common\Shader\Alpha-VertexLit.shader" />
      <None Include="Assets\Scripts\Shaders\ZQLTTextureExtAdd.shader" />
- <Reference Include="Assembly-UnityScript">
- <HintPath>E:/pengbo/github/Fleshiness/Fleshiness/Project/UnityProject/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Unity4_7_0/Editor/Data/UnityExtensions/Unity/GUISystem/4.7.0/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>
