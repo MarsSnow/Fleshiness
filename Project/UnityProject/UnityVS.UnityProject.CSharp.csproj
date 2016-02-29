@@ -345,7 +345,6 @@
     <None Include="Assets\Resources\Common\Shader\OutLighting.shader" />
     <None Include="Assets\Resources\Common\Shader\Particle Add.shader" />
     <None Include="Assets\Resources\Common\Shader\RimLightSpce.shader" />
-    <None Include="Assets\Scripts\Archive\ItemRecord.txt" />
     <None Include="Assets\Scripts\Plugins\Spine\Shaders\Bones.shader" />
     <None Include="Assets\Scripts\Plugins\Spine\Shaders\HiddenPass.shader" />
     <None Include="Assets\Scripts\Plugins\Spine\Shaders\Skeleton.shader" />

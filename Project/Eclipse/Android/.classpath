@@ -10,8 +10,8 @@
 	<classpathentry kind="lib" path="libs/TenpayServiceSDK_V5.0.jar"/>
 	<classpathentry kind="lib" path="libs/WanpuPay_2.2.1.jar"/>
 	<classpathentry kind="lib" path="libs/bcs-sdk-java_1.4.3.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files (x86)/Unity4_7_0/Editor/Data/PlaybackEngines/androidplayer/development/bin/classes.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="D:/Program Files (x86)/Unity4_7_0/Editor/Data/PlaybackEngines/androidplayer/development/bin/classes.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
